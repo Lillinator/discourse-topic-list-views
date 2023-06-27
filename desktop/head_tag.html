@@ -145,7 +145,7 @@
       {{/if}}
     </a>
   </td>
-  {{else if (theme-setting 'show_topic_author_column === "Default"')}}
+  {{else}}
   
   {{#if bulkSelectEnabled}}
     <td class="bulk-select topic-list-data">
@@ -274,7 +274,7 @@
     {{raw "topic-list-header-column" order='posters' forceName=(theme-i18n "author") }}
   {{/if}}
 
-{{else if (theme-setting 'show_topic_author_column === "Default"')}}
+{{else}}
   
   {{#if bulkSelectEnabled}}
     <th class="bulk-select topic-list-data">

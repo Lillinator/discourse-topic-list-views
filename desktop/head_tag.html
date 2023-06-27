@@ -32,7 +32,7 @@
       {{~/if}}
       {{~raw-plugin-outlet name="topic-list-after-title"}}
       {{~#if showTopicPostBadges}}
-      {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.'Last'UnreadUrl newDotText=newDotText}}
+      {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
       {{~/if}}
     </span>
     <div class="link-bottom-line">
@@ -93,7 +93,7 @@
       {{~/if}}
       {{~raw-plugin-outlet name="topic-list-after-title"}}
       {{~#if showTopicPostBadges}}
-      {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.'Last'UnreadUrl newDotText=newDotText}}
+      {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
       {{~/if}}
     </span>
     <div class="link-bottom-line">
@@ -163,7 +163,7 @@
       {{~/if}}
       {{~raw-plugin-outlet name="topic-list-after-title"}}
       {{~#if showTopicPostBadges}}
-      {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.'Last'UnreadUrl newDotText=newDotText}}
+      {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
       {{~/if}}
     </span>
     <div class="link-bottom-line">
@@ -317,7 +317,7 @@
       {{#if topic.featured_link}}
         {{topic-featured-link topic}}
       {{/if}}
-      {{topic-post-badges newPosts=topic.totalUnread unseen=topic.unseen url=topic.'Last'UnreadUrl}}
+      {{topic-post-badges newPosts=topic.totalUnread unseen=topic.unseen url=topic.lastUnreadUrl}}
     </div>
     <div class='bottom-row'>
       {{category-link topic.category}}
@@ -331,8 +331,8 @@
       @outletArgs={{hash topic=this.topic}}
     />
     {{raw "list/posts-count-column" topic=topic tagName="div"}}
-    <div class="topic-'Last'-activity">
-      <a href="{{topic.'Last'PostUrl}}" title="{{topic.bumpedAtTitle}}">{{format-date topic.bumpedAt format="tiny" noTitle="true"}}</a>
+    <div class="topic-last-activity">
+      <a href="{{topic.lastPostUrl}}" title="{{topic.bumpedAtTitle}}">{{format-date topic.bumpedAt format="tiny" noTitle="true"}}</a>
     </div>
   </div>
 

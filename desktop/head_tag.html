@@ -5,6 +5,7 @@
   {{/if}}
 
 {{#if (theme-setting 'show_author_column_first')}}
+  
     <td class='author topic-list-data'>
     <a href="{{topic.creator.path}}" data-user-card="{{topic.creator.username}}">
       {{#if (theme-setting 'show_author_username')}}
@@ -47,7 +48,6 @@
       {{raw "list/topic-excerpt" topic=topic}}
     {{/if}}
   </td>
-
 
   {{raw "list/posts-count-column" topic=topic}}
 
@@ -134,7 +134,7 @@
     </div>
   </div>
   
-{{else}}
+  {{else}}
  
   {{#if bulkSelectEnabled}}
     <td class="bulk-select topic-list-data">
@@ -265,4 +265,5 @@
     </div>
   </div>
   {{/if}}
+  
  </script>

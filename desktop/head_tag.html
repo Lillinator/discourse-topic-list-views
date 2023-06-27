@@ -287,7 +287,7 @@
   {{raw "topic-list-header-column" order='default' name=listTitle bulkSelectEnabled=bulkSelectEnabled showBulkToggle=toggleInTitle canBulkSelect=canBulkSelect}}
 
   {{#if showPosters}}
-    {{raw "topic-list-header-column" order='posters' ariaLabel=(i18n "category.sort_options.posters")}}
+    {{raw "topic-list-header-column" order='posters' forceName=(theme-i18n "author") }}
   {{/if}}
   
   {{raw "topic-list-header-column" sortable=sortable number='true' order='posts' name='replies'}}

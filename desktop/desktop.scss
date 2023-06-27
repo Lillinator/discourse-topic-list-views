@@ -15,13 +15,13 @@
   color: var(--primary-medium);
 }
 
-@if $show_topic_author_column_last == "true" {
-.topic-list .topic-list-data:last-of-type  {
-    text-align: right;
-    padding-right: 8px;
-    padding-left: 40px;
-  }
-}
+//@if $show_topic_author_column_last == "true" {
+//.topic-list .topic-list-data:last-of-type  {
+//    text-align: right;
+//    padding-right: 8px;
+//    padding-left: 40px;
+//  }
+//}
 
 //@if $show_topic_author_column_first == "true" {
 //.topic-list .topic-list-data:first-of-type  {

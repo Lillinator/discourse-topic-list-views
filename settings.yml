@@ -4,12 +4,15 @@ show_author_username:
   description:
     en: "Show author usernames instead profile avatars."
 
-show_topic_author_column:
-  type: enum
-  default: ""
-  choices:
-    - First
-    - Last
+show_topic_author_column_first:
+  type: bool
+  default: false
   description: 
-    en: "Placement of topic authors column."
+    en: "Show topic authors in the first column."
+    
+show_topic_author_column_last:
+  type: bool
+  default: false
+  description: 
+    en: "Show topic authors in the last column."
     

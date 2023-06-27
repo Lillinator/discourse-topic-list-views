@@ -334,35 +334,41 @@
 
 <script type="text/x-handlebars" data-template-name="components/latest-topic-list-item">
   
-  <div class='topic-poster'>
-    {{#user-link user=topic.creator}}
-    {{avatar topic.creator imageSize="large"}}
-    {{/user-link}}
-  </div>
-  <div class='main-link'>
-    <div class='top-row'>
-      {{raw "topic-status" topic=topic}}
-      {{topic-link topic}}
-      {{#if topic.featured_link}}
-        {{topic-featured-link topic}}
-      {{/if}}
-      {{topic-post-badges newPosts=topic.totalUnread unseen=topic.unseen url=topic.lastUnreadUrl}}
-    </div>
-    <div class='bottom-row'>
-      {{category-link topic.category}}
-      {{discourse-tags topic mode="list"}}
-    </div>
-  </div>
-  <div class='topic-stats'>
-    <PluginOutlet
-      @name="above-latest-topic-list-item-post-count"
-      @connectorTagName="div"
-      @outletArgs={{hash topic=this.topic}}
+<PluginOutlet @name="above-latest-topic-list-item" @connectorTagName="div" />
+<div class="topic-poster">
+  <UserLink @user={{this.topic.creator}}>
+    {{avatar this.topic.creator imageSize="large"}}
+  </UserLink>
+  <UserAvatarFlair @user={{this.topic.creator}} />
+</div>
+<div class="main-link">
+  <div class="top-row">
+    {{raw "topic-status" topic=this.topic}}
+    {{topic-link this.topic}}
+    {{~#if this.topic.featured_link}}
+      {{topic-featured-link this.topic}}
+    {{/if}}
+    <TopicPostBadges
+      @unreadPosts={{this.topic.unread_posts}}
+      @unseen={{this.topic.unseen}}
+      @url={{this.topic.lastUnreadUrl}}
     />
-    {{raw "list/posts-count-column" topic=topic tagName="div"}}
-    <div class="topic-last-activity">
-      <a href="{{topic.lastPostUrl}}" title="{{topic.bumpedAtTitle}}">{{format-date topic.bumpedAt format="tiny" noTitle="true"}}</a>
-    </div>
   </div>
+  <div class="bottom-row">
+    {{category-link this.topic.category}}{{discourse-tags
+      this.topic
+      mode="list"
+    }}{{! intentionally inline to avoid whitespace}}
+  </div>
+</div>
+<div class="topic-stats">
+  {{raw "list/posts-count-column" topic=this.topic tagName="div"}}
+  <div class="topic-last-activity">
+    <a
+      href={{this.topic.lastPostUrl}}
+      title={{this.topic.bumpedAtTitle}}
+    >{{format-date this.topic.bumpedAt format="tiny" noTitle="true"}}</a>
+  </div>
+</div>
 
  </script>

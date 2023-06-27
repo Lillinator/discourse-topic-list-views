@@ -180,12 +180,12 @@
     {{/if}}
   </td>
 
-    <td class='author topic-list-data'>
-    <a href="{{topic.creator.path}}" data-user-card="{{topic.creator.username}}">
+    <td class='poster topic-list-data'>
+    <a href="{{topic.poster.path}}" data-user-card="{{topic.poster.username}}">
       {{#if (theme-setting 'show_author_username')}}
-        {{topic.creator.username}}
+        {{topic.poster.username}}
         {{else}}
-        {{avatar topic.creator imageSize="45"}}
+        {{avatar topic.poster imageSize="45"}}
       {{/if}}
     </a>
   </td>

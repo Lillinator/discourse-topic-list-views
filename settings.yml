@@ -5,11 +5,7 @@ show_author_username:
     en: "Show author usernames instead profile avatars."
 
 show_topic_author_column:
-  type: enum
-  default: Default
-  choices:
-    - First
-    - Last
-    - Default
+  type: string
+  default: ""
   description: 
     en: "Show topic authors column first, last or default."

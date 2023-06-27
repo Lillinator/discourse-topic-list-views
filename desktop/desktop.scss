@@ -23,10 +23,10 @@
   }
 }
 
-@if $show_topic_author_column_first == "true" {
-.topic-list .topic-list-data:first-of-type  {
-    text-align: left;
-    padding-left: 8px;
-    padding-right: 20px;
-  }
-}
+//@if $show_topic_author_column_first == "true" {
+//.topic-list .topic-list-data:first-of-type  {
+//   text-align: left;
+//    padding-left: 8px;
+//    padding-right: 20px;
+//  }
+//}

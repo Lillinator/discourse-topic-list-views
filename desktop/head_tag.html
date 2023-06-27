@@ -4,7 +4,7 @@
     {{raw "list/posters-column" posters=topic.participants}}
   {{/if}}
 
-{{#if (theme-setting 'show_topic_author_column === First')}}
+{{#if (theme-setting 'show_topic_author_column === 'First'')}}
 
   <td class='author topic-list-data'>
     <a href="{{topic.creator.path}}" data-user-card="{{topic.creator.username}}">
@@ -32,7 +32,7 @@
       {{~/if}}
       {{~raw-plugin-outlet name="topic-list-after-title"}}
       {{~#if showTopicPostBadges}}
-      {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
+      {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.'Last'UnreadUrl newDotText=newDotText}}
       {{~/if}}
     </span>
     <div class="link-bottom-line">
@@ -75,7 +75,7 @@
 
   {{raw "list/activity-column" topic=topic class="num" tagName="td"}}
 
-{{else if (theme-setting 'show_topic_author_column === Last')}}
+{{else if (theme-setting 'show_topic_author_column === 'Last'')}}
 
   {{#if bulkSelectEnabled}}
     <td class="bulk-select topic-list-data">
@@ -93,7 +93,7 @@
       {{~/if}}
       {{~raw-plugin-outlet name="topic-list-after-title"}}
       {{~#if showTopicPostBadges}}
-      {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
+      {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.'Last'UnreadUrl newDotText=newDotText}}
       {{~/if}}
     </span>
     <div class="link-bottom-line">
@@ -163,7 +163,7 @@
       {{~/if}}
       {{~raw-plugin-outlet name="topic-list-after-title"}}
       {{~#if showTopicPostBadges}}
-      {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
+      {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.'Last'UnreadUrl newDotText=newDotText}}
       {{~/if}}
     </span>
     <div class="link-bottom-line">
@@ -221,7 +221,7 @@
 
 <script type="text/x-handlebars" data-template-name="topic-list-header.raw">
 
-{{#if (theme-setting 'show_topic_author_column === First')}}
+{{#if (theme-setting 'show_topic_author_column === 'First'')}}
   
  {{#if showPosters}}
     {{raw "topic-list-header-column" order='posters' forceName=(theme-i18n "author") }}
@@ -248,7 +248,7 @@
   {{raw "topic-list-header-column" sortable=sortable number='true' order='activity' name='activity'}}
   
 
-{{else if (theme-setting 'show_topic_author_column === Last')}}
+{{else if (theme-setting 'show_topic_author_column === 'Last'')}}
 
   {{#if bulkSelectEnabled}}
     <th class="bulk-select topic-list-data">
@@ -317,7 +317,7 @@
       {{#if topic.featured_link}}
         {{topic-featured-link topic}}
       {{/if}}
-      {{topic-post-badges newPosts=topic.totalUnread unseen=topic.unseen url=topic.lastUnreadUrl}}
+      {{topic-post-badges newPosts=topic.totalUnread unseen=topic.unseen url=topic.'Last'UnreadUrl}}
     </div>
     <div class='bottom-row'>
       {{category-link topic.category}}
@@ -331,8 +331,8 @@
       @outletArgs={{hash topic=this.topic}}
     />
     {{raw "list/posts-count-column" topic=topic tagName="div"}}
-    <div class="topic-last-activity">
-      <a href="{{topic.lastPostUrl}}" title="{{topic.bumpedAtTitle}}">{{format-date topic.bumpedAt format="tiny" noTitle="true"}}</a>
+    <div class="topic-'Last'-activity">
+      <a href="{{topic.'Last'PostUrl}}" title="{{topic.bumpedAtTitle}}">{{format-date topic.bumpedAt format="tiny" noTitle="true"}}</a>
     </div>
   </div>
 

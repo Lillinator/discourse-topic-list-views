@@ -6,8 +6,8 @@
 
 {{#if (theme-setting 'show_topic_author_column_first')}}
 
-  <td class='poster topic-list-data'>
-    <a href="{{topic.poster.path}}" data-user-card="{{topic.poster.username}}">
+  <td class='author topic-list-data' width = 100 align = "right">
+    <a href="{{topic.creator.path}}" data-user-card="{{topic.creator.username}}">
       {{#if (theme-setting 'show_author_username')}}
         {{topic.creator.username}}
         {{else}}
@@ -136,7 +136,7 @@
 
   {{raw "list/activity-column" topic=topic class="num" tagName="td"}}
 
-    <td class='author topic-list-data' width = 100 align = "right">
+  <td class='author topic-list-data' width = 100 align = "right">
     <a href="{{topic.creator.path}}" data-user-card="{{topic.creator.username}}">
       {{#if (theme-setting 'show_author_username')}}
         {{topic.creator.username}}
@@ -180,12 +180,12 @@
     {{/if}}
   </td>
 
-  <td class='author topic-list-data'>
-    <a href="{{topic.creator.path}}" data-user-card="{{topic.creator.username}}">
+  <td class='poster topic-list-data'>
+    <a href="{{topic.poster.path}}" data-user-card="{{topic.poster.username}}">
       {{#if (theme-setting 'show_author_username')}}
         {{topic.creator.username}}
         {{else}}
-        {{avatar topic.creator imageSize="45"}}
+        {{avatar topic.poster imageSize="45"}}
       {{/if}}
     </a>
   </td>

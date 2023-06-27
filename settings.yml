@@ -1,4 +1,4 @@
-umshow_author_username:
+show_author_username:
   type: bool
   default: false
   description:

@@ -6,8 +6,8 @@
 
 {{#if (theme-setting 'show_topic_author_column_first')}}
 
-  <td class='author topic-list-data'>
-    <a href="{{topic.creator.path}}" data-user-card="{{topic.creator.username}}">
+  <td class='poster topic-list-data'>
+    <a href="{{topic.poster.path}}" data-user-card="{{topic.poster.username}}">
       {{#if (theme-setting 'show_author_username')}}
         {{topic.creator.username}}
         {{else}}
@@ -287,7 +287,7 @@
   {{raw "topic-list-header-column" order='default' name=listTitle bulkSelectEnabled=bulkSelectEnabled showBulkToggle=toggleInTitle canBulkSelect=canBulkSelect}}
 
   {{#if showPosters}}
-    {{raw "topic-list-header-column" order='posters' forceName=(theme-i18n "author") }}
+    {{raw "topic-list-header-column" order='posters' forceName=(theme-i18n "poster") }}
   {{/if}}
   
   {{raw "topic-list-header-column" sortable=sortable number='true' order='posts' name='replies'}}

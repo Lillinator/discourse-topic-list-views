@@ -2,4 +2,10 @@ show_author_username:
   type: bool
   default: false
   description:
-    en: "Show author username instead profile avatar"
+    en: "Show author username instead profile avatar."
+
+show_topic_author_column_first:
+  type: bool
+  default: false
+  description:
+    en: "Show topic author in first column."

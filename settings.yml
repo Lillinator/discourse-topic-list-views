@@ -3,3 +3,9 @@ show_author_username:
   default: false
   description:
     en: "Show author username instead profile avatar"
+
+show_author_column_first:
+  type: bool
+  default: false
+  description:
+    en: "Show topic author column first"

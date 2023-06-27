@@ -4,7 +4,7 @@ show_author_username:
   description:
     en: "Show author username instead profile avatar"
 
-show_author_column_first:
+show_topic_author_column_first:
   type: bool
   default: false
   description:
